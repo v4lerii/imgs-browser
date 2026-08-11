@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    background-color: #171a24;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #1f222f;
+    height: auto;
+    width: 18rem;
+    flex-shrink: 0;
+    z-index: 5;
+}
+
+nav {
+    border-bottom: #1f222f solid 2px;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    z-index: 10;
+    background-color: #171a24;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 5rem);
+    display: flex;
+}
+
+#main-images {
+    flex: 1;
+    min-width: 0;
+    /* important, see below */
+    padding: 1rem;
+}
+
+.img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.grid-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: #13161d;
+    border-radius: 8px;
+    border: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid-img:hover .save-btn {
+    opacity: 1;
+}
+
+.grid-img:hover img {
+    transform: scale(1.03);
+}
+
+.grid-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    opacity: 1;
+    transition: all ease 0.2s;
+    color: #373a47;
+}
+
+.grid-img .save-btn {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.36rem;
+    background-color: #0e121eb8;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.logo-text {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Noto Serif", serif;
+    padding: 0.5rem;
+}
+
+.logo-sans {
+    font-family: "Noto Sans", sans-serif;
+    opacity: 0.3;
+}
