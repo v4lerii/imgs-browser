@@ -1,18 +1,16 @@
 const grid = document.getElementById('img-grid');
-const count = 62;
+const count = 40;
 
-// Array containing your image filenames
-const images = ['bliss.jpg', 'ocean.jpg'];
+const images = Array.from({ length: 8 }, (_, i) => `${i + 1}.png`);
+const mediaPath = 'media/';
 
 for (let i = 0; i < count; i++) {
-  // Choose a random index (either 0 or 1)
-  const randomIndex = Math.floor(Math.random() * images.length);
-  const randomImage = images[randomIndex];
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+  const src = mediaPath + randomImage;
 
   grid.insertAdjacentHTML('beforeend', `
     <button class="grid-img">
-      <img src="${randomImage}" alt="test">
-      <a href="${randomImage}" class="save-btn" download>Save</a>
+      <img src="${src}" alt="test">
     </button>
   `);
 }
