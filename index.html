@@ -14,9 +14,16 @@
         <!-- CHANGE BACK TO logo.png -->
         <a href="/" class="logo"><div><img src="media/3.png" alt="bannner"><div style="width: 1.2rem;"></div>x3<span class="logo-sans">.rocks</span></div></a>
     </nav>
-    <div style="height: 4rem; background-color: #1f222f;"></div>
+    <div style="height: 4rem; width: 100%;"></div>
     <main>
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <search id="sidebar-search">
+                <form action="/s" method="get">
+                    <input type="search" id="site-search" autocomplete="off" name="q" placeholder="hello">
+                    <button type="submit">↵</button>
+                </form>
+            </search>
+        </div>
         <div id="main-images">
             <div class="img-grid" id="img-grid">
                 <button class="grid-img">
@@ -26,7 +33,7 @@
         </div>
         <div class="viewer-buffer"></div>
         <div class="viewer-panel">
-            <div class="preview-img">
+            <div id="preview-img">
                 <img src="media/3.png" alt="test">
                 <a href="media/3.png" class="img-btn" download>Save</a>
             </div>
